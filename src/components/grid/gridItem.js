@@ -39,6 +39,7 @@ export const GridItem = props => {
     session,
     militaryTime,
     onLabelPress,
+    showSessionDetailsModal,
     showPresenterDetailsModal,
   } = props
   if (!session) return null
@@ -59,6 +60,7 @@ export const GridItem = props => {
         session={session}
         militaryTime={militaryTime}
         onLabelPress={onLabelPress}
+        showSessionDetailsModal={showSessionDetailsModal}
         showPresenterDetailsModal={showPresenterDetailsModal}
       />
     </View>

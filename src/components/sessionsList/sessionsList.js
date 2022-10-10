@@ -127,6 +127,7 @@ export const SessionsList = props => {
     settings,
     sessions,
     onDayChange,
+    showSessionDetailsModal,
     showPresenterDetailsModal,
     ...itemProps
   } = props
@@ -155,6 +156,7 @@ export const SessionsList = props => {
       onScrollSectionChange={onScrollSectionChange}
       renderItem={({ item }) => (
         <GridContainer
+          showSessionDetailsModal={showSessionDetailsModal}
           showPresenterDetailsModal={showPresenterDetailsModal}
           {...item}
           {...itemProps}
