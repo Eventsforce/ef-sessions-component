@@ -54,6 +54,16 @@ export const GridTileContent = props => {
   const theme = useTheme()
   const gridTileContentStyles = theme.get('gridItem.gridTileContent')
 
+  const ActionWrap = reStyle(View)({ fl: 1, minW: 'fit-content' })
+
+  const ModalBookingButton = ({ session }) => {
+    return (
+      <ActionWrap>
+        <BookingButton session={session} />
+      </ActionWrap>
+    )
+  }
+
   return (
     <View
       className='ef-grid-tile-content'
@@ -74,7 +84,12 @@ export const GridTileContent = props => {
       </View>
 
       <SessionName
-        onPress={() => showSessionDetailsModal(session.identifier)}
+        onPress={() =>
+          showSessionDetailsModal(
+            session.identifier,
+            <ModalBookingButton session={session} />
+          )
+        }
         text={session?.name}
       />
 
