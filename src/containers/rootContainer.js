@@ -92,7 +92,7 @@ export const RootContainer = withAppHeader(displayName, props => {
             'session details modal opened for session with ID: ' +
               sessionID +
               ' with button ' +
-              bookingButton
+              typeof bookingButton
           )
         }
         showPresenterDetailsModal={presenterID =>
