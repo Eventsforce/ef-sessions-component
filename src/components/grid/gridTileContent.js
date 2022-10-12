@@ -85,9 +85,10 @@ export const GridTileContent = props => {
 
       <SessionName
         onPress={() =>
-          showSessionDetailsModal(session.identifier, () => (
-            <ModalBookingButton session={session} />
-          ))
+          showSessionDetailsModal(
+            session.identifier,
+            ModalBookingButton({ session })
+          )
         }
         text={session?.name}
       />
