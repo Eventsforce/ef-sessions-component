@@ -9,6 +9,7 @@ import { SessionLocation } from 'SVComponents/sessionLocation'
 import { BookingButton } from 'SVComponents/button/bookingButton'
 import { SessionPresentersRow } from 'SVComponents/sessionDetails/sessionPresentersRow'
 import { reStyle } from '@keg-hub/re-theme/reStyle'
+import { Session } from 'SVModels/session'
 import PropTypes from 'prop-types'
 
 const LabelsDivider = reStyle(View)(theme => ({
@@ -56,10 +57,10 @@ export const GridTileContent = props => {
 
   const ActionWrap = reStyle(View)({ fl: 1, minW: 'fit-content' })
 
-  const ModalBookingButton = ({ session }) => {
+  const ModalBookingButton = props => {
     return (
       <ActionWrap>
-        <BookingButton session={session} />
+        <BookingButton session={props.session} />
       </ActionWrap>
     )
   }
@@ -85,10 +86,9 @@ export const GridTileContent = props => {
 
       <SessionName
         onPress={() =>
-          showSessionDetailsModal(
-            session.identifier,
-            ModalBookingButton({ session })
-          )
+          showSessionDetailsModal(session.identifier, efSession => {
+            return <ModalBookingButton session={new Session(efSession)} />
+          })
         }
         text={session?.name}
       />
