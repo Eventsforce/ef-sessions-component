@@ -34,12 +34,16 @@ const useBookingLists = (sessionId, attendees) => {
  * @returns {Object} Data extracted from the store
  */
 const useStoreData = () => {
+  console.log('tap - useStoreData start')
+
   const storeData = useStoreItems([
     CATEGORIES.SETTINGS,
     CATEGORIES.ATTENDEES,
     CATEGORIES.AGENDA_SESSIONS,
     CATEGORIES.PENDING_SESSION,
   ])
+
+  console.log('tap - useStoreData got data', storeData)
 
   return {
     ...storeData,

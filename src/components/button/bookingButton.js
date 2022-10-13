@@ -151,6 +151,7 @@ export const BookingButton = props => {
   const { session, ...remaining } = props
 
   console.log('tap BookingButton - session', session)
+  console.log('tap BookingButton - remaining', remaining)
 
   const bookingModel = useBookingState(session)
   console.log('tap BookingButton - bookingModel', bookingModel)
