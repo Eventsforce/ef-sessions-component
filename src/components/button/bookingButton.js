@@ -144,16 +144,16 @@ const applyPriceAndDisplayRules = (state, text, formattedPrice) => {
  * @param {Object} styles - Booking button theme styles
  */
 export const BookingButton = props => {
-  console.log('tap BookingButton start - props: ' + props)
+  console.log('tap BookingButton start - props', props)
 
   if (!props.session) return null
 
   const { session, ...remaining } = props
 
-  console.log('tap BookingButton - session: ' + session)
+  console.log('tap BookingButton - session', session)
 
   const bookingModel = useBookingState(session)
-  console.log('tap BookingButton - bookingModel: ' + bookingModel)
+  console.log('tap BookingButton - bookingModel', bookingModel)
 
   const selectSessionCb = useSelectSession(session, bookingModel)
   const pendingStyles = useStyle('button.evfButton.pending')
