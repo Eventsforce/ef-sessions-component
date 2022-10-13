@@ -100,10 +100,14 @@ const useBookingFactory = (
  * @param {import('SVModels/session').Session} props.session
  */
 export const useBookingState = session => {
+  console.log('tap useBookingState - session: ' + session)
+
   const sessionId = session?.identifier
   const state = getBookingState(session)
 
-  // Items from the store to determin the current booking state
+  console.log('tap useBookingState - state: ' + state)
+
+  // Items from the store to determine the current booking state
   const {
     attendees,
     agendaSessions,
@@ -111,6 +115,8 @@ export const useBookingState = session => {
     settings,
     pendingSession,
   } = useStoreData()
+
+  console.log('tap useBookingState - agendaSessions: ' + agendaSessions)
 
   // Lists for attendees that have booked the session, or are on the waiting list
   const bookingLists = useBookingLists(sessionId, attendees)

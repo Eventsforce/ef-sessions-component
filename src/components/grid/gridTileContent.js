@@ -58,6 +58,8 @@ export const GridTileContent = props => {
   const ActionWrap = reStyle(View)({ fl: 1, minW: 'fit-content' })
 
   const ModalBookingButton = props => {
+    console.log('tap started ModalBookingButton')
+
     return (
       <ActionWrap>
         <BookingButton session={props.session} />
@@ -87,7 +89,14 @@ export const GridTileContent = props => {
       <SessionName
         onPress={() =>
           showSessionDetailsModal(session.identifier, efSession => {
-            return <ModalBookingButton session={new Session(efSession)} />
+            console.log('tap onPress - efSession: ' + efSession)
+            const newSession = new Session(efSession)
+            console.log('tap onPress - newSession: ' + newSession)
+
+            const button = <ModalBookingButton session={newSession} />
+            console.log('tap onPress - button: ' + button)
+
+            return button
           })
         }
         text={session?.name}
