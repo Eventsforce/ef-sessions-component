@@ -88,7 +88,7 @@ const HeaderButtons = ({ onClick }) => {
         <Button
           className={filterButtonClassName}
           onClick={onClick}
-          content={'Edit Filter'}
+          content={'Edit filters'}
         />
       ) }
       { showClearButton && (
