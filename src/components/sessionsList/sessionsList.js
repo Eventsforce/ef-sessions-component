@@ -75,6 +75,9 @@ const HeaderButtons = ({ onClick }) => {
 
   const filterButtonClassName = 'ef-sessions-filter-button col-auto'
 
+  let anyFiltersApplied =
+    activeFilters.length > 0 || activePresenterFilters.length > 0
+
   return (
     <div className='row justify-content-end pr-md-5 pr-sm-3'>
       { smallWidth ? (
@@ -88,7 +91,7 @@ const HeaderButtons = ({ onClick }) => {
         <Button
           className={filterButtonClassName}
           onClick={onClick}
-          content={'Edit filters'}
+          content={anyFiltersApplied ? 'Edit filters' : 'Filter'}
         />
       ) }
       { showClearButton && (
