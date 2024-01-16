@@ -79,7 +79,7 @@ const HeaderButtons = ({ onClick }) => {
     activeFilters.length > 0 || activePresenterFilters.length > 0
 
   return (
-    <div className='row justify-content-end pr-md-5 pr-sm-3'>
+    <div className='row justify-content-end pr-md-5 pr-sm-3 ef-session-button-container'>
       { smallWidth ? (
         <div className={filterButtonClassName + ' align-self-center px-0'}>
           <EVFIcons.Filter
